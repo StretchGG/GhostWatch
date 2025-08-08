@@ -16,6 +16,9 @@ faqs:
             <br><a href="https://www.youtube.com/@FantasticPixelCastle" target="_blank">YouTube</a>
             <br><a href="https://www.linkedin.com/company/fantastic-pixel-castle/" target="_blank">Linkedin</a>
             <br><a href="https://x.com/FPCStudio" target="_blank">X</a><br>
-            <br> There is also an <a href="https://x.com/FPCStudio" target="_blank">Unofficial Discord Community</a> where you can hang out and chat.'
+            <br> There is also an <a href="https://x.com/FPCStudio" target="_blank">Unofficial Discord Community</a> where you can hang out and chat.
+            <br>
+            <br> Their podcast: <a href="https://www.youtube.com/watch?v=Srvis5NigZ0&list=PLBs3DklCxIXyoIqNcm5IJ1_x5qUA_3a_x" target="_blank">Word on the Street</a>
+            <br> Their blog: <a href="https://fantasticpixelcastle.com/new-detail/?id=697" target="_blank">Ghost Stories</a>'
             
 ---
