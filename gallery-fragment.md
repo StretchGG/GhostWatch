@@ -35,6 +35,9 @@ permalink: /fragment/gallery
       {%- elsif image.source contains "youtube.com" or image.source contains "youtu.be" -%}
         {%- assign source_icon = "/images/site/youtube-icon.png" -%}
         {%- assign source_name = "YouTube" -%}
+      {%- elsif image.source contains "fantasticpixelcastle.com" or image.source contains "fantasticpixelcastle.com" -%}
+        {%- assign source_icon = "/images/site/fantasticpixelcastle-icon.png" -%}
+        {%- assign source_name = "Fantastic Pixel Castle" -%}
       {%- else -%}
         {%- assign source_name = image.source -%}
       {%- endif -%}
