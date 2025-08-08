@@ -1,0 +1,29 @@
+title: GhostWatch
+description: Keeping up with Project Ghost
+url: "GhostWatch.boo"
+twitter_username: Stretchz
+github_username:  StretchGG
+
+# Build settings
+plugins:
+  - jekyll-feed
+collections:
+  photo_gallery:
+    output: true
+    permalink: /gallery/:path/
+  faq:
+    output: false
+    permalink: /faq/:name/
+  api:
+    output: true
+    permalink: /api/:name/
+
+# Thumbnail generation settings
+thumbnails:
+  width: 400              # Max thumbnail width
+  height: 300             # Max thumbnail height  
+  quality: 85             # JPEG quality (1-100)
+  source: 'images/gallery' # Source directory
+  destination: 'images/thumbs' # Output directory
+  webp: true              # Convert to WebP for better compression
+  formats: ['.jpg', '.jpeg', '.png', '.webp'] # Supported formats

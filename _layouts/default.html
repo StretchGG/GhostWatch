@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  <link rel="icon" type="image/x-icon" href="/images/site/ghostwatch-icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.3.0/dist/photoswipe.css">
+  <link rel="stylesheet" href="/css/photoswipe-dynamic-caption-plugin.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper">
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="site-logo">
+      <img src="/images/site/ghostwatch-icon.png" alt="GhostWatch Logo">
+    </a>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="/" class="nav-link" data-link="home">Home</a>
+        </li>
+        <li>
+          <a href="/gallery" class="nav-link" data-link="gallery">Gallery</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <main class="main">
+      {{ content }}
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section left">
+          <h2>OFFICIAL</h2>
+          <p>FPC's Official Social Media:</p>
+          <div class="footer-icons">
+            <a href="https://bsky.app/profile/fpcstudio.bsky.social" target="_blank"><img src="/images/site/bluesky-icon.png" alt="Bluesky" /></a>
+            <a href="https://www.linkedin.com/company/fantastic-pixel-castle" target="_blank"><img src="/images/site/linkedin-icon.png" alt="Linkedin" /></a>
+            <a href="https://www.youtube.com/@FantasticPixelCastle" target="_blank"><img src="/images/site/youtube-icon.png" alt="YouTube" /></a>
+            <a href="https://x.com/FPCStudio" target="_blank"><img src="/images/site/x-icon.png" alt="X" /></a>
+          </div>
+        </div>
+
+        <div class="footer-section right">
+          <h2>Community</h2>
+          <p>Unofficial Community</p>
+          <div class="footer-icons">
+            <a href="https://discord.gg/BmUqqm45h2" target="_blank"><img src="/images/site/discord-icon.svg" alt="Discord" /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p>This site is a fan project and is not affiliated with Fantastic Pixel Castle or Project Ghost.</p>
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+let currentPage = '';
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mainContent = document.querySelector('main');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function cleanupCurrentPage() {
+    // Remove any existing PhotoSwipe instances
+    if (window.currentLightbox) {
+      window.currentLightbox.destroy();
+      window.currentLightbox = null;
+    }
+    
+    // Clean up gallery instance
+    if (window.currentGalleryInstance) {
+      window.currentGalleryInstance = null;
+    }
+    
+    // Remove any existing event listeners that might conflict
+    const existingScripts = mainContent.querySelectorAll('script');
+    existingScripts.forEach(script => script.remove());
+  }
+
+  function executeScripts(container) {
+    const scripts = container.querySelectorAll('script');
+    scripts.forEach(script => {
+      const newScript = document.createElement('script');
+      
+      // Copy attributes
+      Array.from(script.attributes).forEach(attr => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+      
+      // Copy content
+      if (script.src) {
+        newScript.src = script.src;
+      } else {
+        newScript.textContent = script.textContent;
+      }
+      
+      // For module scripts, we need to ensure they're executed properly
+      if (script.type === 'module') {
+        newScript.type = 'module';
+      }
+      
+      // Replace the old script with new one
+      script.parentNode.replaceChild(newScript, script);
+    });
+  }
+
+  function updateActiveNavigation(activePage) {
+    // Remove active class from all nav links
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+    
+    // Add active class to current page nav link
+    const activeLink = document.querySelector(`.nav-link[data-link="${activePage}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
+
+  function loadContent(path, pushState = true) {
+    const fragmentUrl = `/fragment/${path}`;
+    
+    // Show loading indicator
+    mainContent.innerHTML = '<div class="loading-content"><div class="spinner"></div><p>Loading...</p></div>';
+    
+    // Cleanup previous page
+    cleanupCurrentPage();
+    
+    // Update navigation immediately
+    updateActiveNavigation(path);
+    
+    fetch(fragmentUrl)
+      .then(response => {
+        if (!response.ok) throw new Error('Page not found');
+        return response.text();
+      })
+      .then(html => {
+        // Create a temporary container to parse the HTML
+        const tempContainer = document.createElement('div');
+        tempContainer.innerHTML = html;
+        
+        // Insert the content
+        mainContent.innerHTML = html;
+        
+        // Update browser history
+        if (pushState) {
+          history.pushState({ path }, '', path === 'home' ? '/' : `/${path}`);
+        }
+        
+        // Update current page tracker
+        currentPage = path;
+        
+        // Execute any scripts in the loaded content
+        executeScripts(mainContent);
+        
+        // Run page-specific initialization
+        initializePage(path);
+      })
+      .catch(error => {
+        mainContent.innerHTML = '<div class="error-content"><p>Failed to load content.</p></div>';
+        console.error('Failed to load content:', error);
+      });
+  }
+
+  function initializePage(path) {
+    if (path === 'home') {
+      initializeFAQ();
+    } else if (path === 'gallery') {
+      // For gallery, the module script will handle its own initialization
+      // We just need to ensure the GalleryOptimizer class is available
+      setTimeout(() => {
+        if (window.GalleryOptimizer && !window.currentGalleryInstance) {
+          window.currentGalleryInstance = new window.GalleryOptimizer();
+        }
+      }, 100);
+    }
+  }
+
+  function initializeFAQ() {
+    // FAQ tab functionality
+    const tabs = document.querySelectorAll('.faq-tab');
+    const groups = document.querySelectorAll('.faq-category-group');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const selectedCategory = tab.dataset.category;
+        groups.forEach(group => {
+          const groupCategory = group.dataset.category;
+          if (selectedCategory === 'All' || groupCategory === selectedCategory) {
+            group.style.display = '';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // FAQ accordion functionality
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const inner = item.querySelector('.faq-answer-inner');
+      let isAnimating = false;
+
+      question.addEventListener('click', () => {
+        if (isAnimating) return;
+        const isOpen = item.classList.contains('active');
+        isAnimating = true;
+
+        if (isOpen) {
+          answer.style.height = inner.offsetHeight + 'px';
+          answer.offsetHeight;
+          answer.style.height = '0px';
+
+          const handleCollapse = (e) => {
+            if (e.target === answer && e.propertyName === 'height') {
+              item.classList.remove('active');
+              answer.style.height = '';
+              answer.removeEventListener('transitionend', handleCollapse);
+              isAnimating = false;
+            }
+          };
+          answer.addEventListener('transitionend', handleCollapse);
+        } else {
+          item.classList.add('active');
+          const targetHeight = inner.offsetHeight;
+          answer.style.height = targetHeight + 'px';
+
+          const handleExpand = (e) => {
+            if (e.target === answer && e.propertyName === 'height') {
+              answer.style.height = 'auto';
+              answer.removeEventListener('transitionend', handleExpand);
+              isAnimating = false;
+            }
+          };
+          answer.addEventListener('transitionend', handleExpand);
+        }
+      });
+    });
+  }
+
+  // Navigation event listeners
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = this.dataset.link;
+      loadContent(target);
+    });
+  });
+
+  // Handle back/forward browser navigation
+  window.addEventListener('popstate', (e) => {
+    const path = window.location.pathname === '/' ? 'home' : window.location.pathname.replace('/', '');
+    loadContent(path, false);
+  });
+
+  // Load correct page on first load
+  const initialPath = window.location.pathname === '/' ? 'home' : window.location.pathname.replace('/', '');
+  loadContent(initialPath, false);
+});
+</script>
+
+<style>
+.loading-content, .error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+}
+
+.loading-content .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #00bfff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+
+}
+
+/* Add some padding to main content to account for sticky header */
+.main {
+  padding-top: 1rem;
+}
+</style>
+
+</body>
+</html>
