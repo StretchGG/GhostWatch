@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn(`Failed to preload image: ${src}`);
             loadedCount++;
           };
+          img.src = src; 
         });
-        
         galleryPreloaded = true;
       })
       .catch(error => {
