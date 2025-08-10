@@ -11,7 +11,7 @@ faqs:
   - question: What will Project Ghost's monetization be?
     answer: Currently they have talked about a Buy-to-Play (B2P) model. You would buy the game upfront and gain full access without the need for a recurring subscription. They have also mentioned cosmetics and buying expansions later down the line but this is still currently being decided.
   - question: What platforms will Project Ghost be on?
-    answer: PC is confirmed but in the podcast episode <a href="https://youtu.be/2zEhgJJnmZo?si=AmX7enZ-kKdq9pWM&t=2477" target="_blank">Word on the Street 14 - Big Progress Episode!</a> they talked about having it on consoles eventually and its just a matter of when.
+    answer: PC is confirmed but in the podcast episode <a href="https://youtu.be/2zEhgJJnmZo?si=AmX7enZ-kKdq9pWM&t=2477" target="_blank">Word on the Street 14 - Big Progress Episode!</a> they talked about having it on consoles eventually and it's just a matter of when.
   - question: Will there be controller support?
     answer: Yes.
   - question: How can I keep up with the game?
