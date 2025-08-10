@@ -1,6 +1,3 @@
-/* Import Google Fonts properly */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,7 +37,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Header and Footer */
 header, footer {
   display: flex;
   align-items: center;
@@ -48,7 +44,6 @@ header, footer {
   padding: 2rem;
 }
 
-/* Main content (no internal scroll) */
 main {
   width: 100%;
   padding: 20px;
@@ -56,7 +51,6 @@ main {
   flex: 1;
 }
 
-/* Typography improvements */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.3;
@@ -191,15 +185,6 @@ p {
   opacity: 0.8;
   padding: 10px;
   letter-spacing: 0.01em;
-}
-
-.header {
-  padding: 1.5rem 2rem;
-  /* 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.8);
-  */
 }
 
 .header-container {
@@ -399,7 +384,8 @@ p {
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-    background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem 2rem;
 
 }
 
