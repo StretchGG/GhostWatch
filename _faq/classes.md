@@ -9,5 +9,5 @@ faqs:
   - question: "What classes have been announced so far? "
     answer: '<a href="https://youtu.be/DGCN_cetK0A?si=6RbAnFLRDfbRIdBk" target="_blank">Dreamblade</a> as well as a <a href="https://www.youtube.com/live/xk-aGg8PnJk?si=U9OOKKC9wJwQI3rB" target="_blank">livestream</a> going a bit more in depth. '
   - question: "What roles will classes have?"
-    answer: "Currently they have talked about having the holy trinity of Tank, Healer & Dps. However they are open to playing around with other ideas and roles for classes. "
+    answer: "Currently they have talked about having the holy trinity of Tank, Healer & DPS. However they are open to playing around with other ideas and roles for classes. "
 ---

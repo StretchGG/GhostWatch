@@ -8,7 +8,7 @@ permalink: /fragment/home
     <h2>About Project Ghost</h2>
     <p>Project Ghost is an upcoming MMORPG by <a href="https://fantasticpixelcastle.com/" target="_blank">Fantastic Pixel Castle</a>, a studio founded by Greg Street. The team has many industry veterans with backgrounds in World of Warcraft, Riot Games and Guild Wars, to name a few.</p>
     <br>
-    <p>Fantastic Pixel Castle is taking a open development approach to their game. They have a podcast, <a href="https://www.youtube.com/watch?v=Srvis5NigZ0&list=PLBs3DklCxIXyoIqNcm5IJ1_x5qUA_3a_x&index=1" target="_blank">Word on the Street</a>,  where the team shares insights to not only Project Ghost but also broader topics in game development. They also have a shorter series called Ghost Stories, where they answer focused questions from the community. This gives fans a glimpse into the creative process as the game takes shape and allows for viewers to give feedback early on.</p>
+    <p>Fantastic Pixel Castle is taking an open development approach to their game. They have a podcast, <a href="https://www.youtube.com/watch?v=Srvis5NigZ0&list=PLBs3DklCxIXyoIqNcm5IJ1_x5qUA_3a_x&index=1" target="_blank">Word on the Street</a>,  where the team shares insights to not only Project Ghost but also broader topics in game development. They also have a shorter series called Ghost Stories, where they answer focused questions from the community. This gives fans a glimpse into the creative process as the game takes shape and allows for viewers to give feedback early on.</p>
     <br>
     <p>The goal of this site is just to be used as a reference hub for everything currently known about Project Ghost.</p>
   </section>
