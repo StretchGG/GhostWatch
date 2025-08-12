@@ -10,7 +10,14 @@ permalink: /fragment/home
     <br>
     <p>Fantastic Pixel Castle is taking an open development approach to their game. They have a podcast, <a href="https://www.youtube.com/watch?v=Srvis5NigZ0&list=PLBs3DklCxIXyoIqNcm5IJ1_x5qUA_3a_x&index=1" target="_blank">Word on the Street</a>,  where the team shares insights to not only Project Ghost but also broader topics in game development. They also have a shorter series called Ghost Stories, where they answer focused questions from the community. This gives fans a glimpse into the creative process as the game takes shape and allows for viewers to give feedback early on.</p>
     <br>
+    <h2>About This Site</h2>
     <p>The goal of this site is just to be used as a reference hub for everything currently known about Project Ghost.</p>
+    <br>
+    <p>If you would like to contact me about this site:</p>
+    <p>Discord: StretchGG</p>
+    <p>Bluesky: <a href="https://bsky.app/profile/stretch.bsky.social" target="_blank">@stretch.bsky.social</a></p>
+    <p>Twitter/X: <a href="https://x.com/Stretchz" target="_blank">@Stretchz</a></p>
+    <p>Twitch: <a href="https://www.twitch.tv/stretchz" target="_blank">@Stretchz</a></p>
   </section>
 
   <section class="faq">
