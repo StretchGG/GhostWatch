@@ -10,6 +10,8 @@ faqs:
     answer: There is currently no way to apply to test. However, they have said before to keep an eye on social media for when they do decide to start testing.
   - question: What will Project Ghost's monetization be?
     answer: Currently they have talked about a Buy-to-Play (B2P) model. You would buy the game upfront and gain full access without the need for a recurring subscription. They have also mentioned cosmetics and buying expansions later down the line but this is still currently being decided.
+  - question: What is Open Development?
+    answer: Open development is a style where developers share the game’s progress, design decisions, and internal builds with the public while the game is still being made. In contrast, traditional development keeps most of these choices hidden until much later in production.<br><br> In Fantastic Pixel Castle’s case, this transparency comes through monthly dev podcasts, blogs, and livestreams showcasing their current build. It also allows the community to give feedback now while things are being worked on instead of when they are already finished. 
   - question: What platforms will Project Ghost be on?
     answer: PC is confirmed but in the podcast episode <a href="https://youtu.be/2zEhgJJnmZo?si=AmX7enZ-kKdq9pWM&t=2477" target="_blank">Word on the Street 14 - Big Progress Episode!</a> they talked about having it on consoles eventually and it's just a matter of when.
   - question: Will there be controller support?
