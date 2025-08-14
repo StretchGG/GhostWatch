@@ -3,7 +3,7 @@ title: Races
 position: 3
 faqs:
   - question: How many races will be in the game?
-    answer: TBA
+    answer: In the unofficial Discord, they talked about having ~4 at launch, with more to be added post-launch and possibly tied to story moments.
   - question: What races have been announced so far?
     answer: They have announced:&nbsp;<a href="https://youtu.be/Dhi9LeCRxU0?si=QsadA7syl2oGSlgd" target="_blank">Kisuan</a> on a recent Q&A livestream.<br>They are also planning to add humans.
   - question: Will each race have unique bonuses?
