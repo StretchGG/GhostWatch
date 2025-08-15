@@ -16,6 +16,8 @@ faqs:
     answer: PC is confirmed but in the podcast episode <a href="https://youtu.be/2zEhgJJnmZo?si=AmX7enZ-kKdq9pWM&t=2477" target="_blank">Word on the Street 14 - Big Progress Episode!</a> they talked about having it on consoles eventually and it's just a matter of when.
   - question: Will there be controller support?
     answer: Yes.
+  - question: Will there be accessibility support?
+    answer: Yes.
   - question: How can I keep up with the game?
     answer: You can follow their socials:<br> <a href="https://bsky.app/profile/fpcstudio.bsky.social" target="_blank">Bluesky</a><br><a href="https://www.youtube.com/@FantasticPixelCastle" target="_blank">YouTube</a><br><a href="https://www.linkedin.com/company/fantastic-pixel-castle/" target="_blank">LinkedIn</a><br><a href="https://x.com/FPCStudio" target="_blank">X</a><br><br> There is also an <a href="https://discord.gg/BmUqqm45h2" target="_blank">Unofficial Discord Community</a> where you can hang out and chat.<br><br> Their podcast:<a href="https://www.youtube.com/watch?v=Srvis5NigZ0&list=PLBs3DklCxIXyoIqNcm5IJ1_x5qUA_3a_x" target="_blank">Word on the Street</a><br> Their blog:<a href="https://fantasticpixelcastle.com/new-detail/?id=697" target="_blank">Ghost Stories</a>
             
